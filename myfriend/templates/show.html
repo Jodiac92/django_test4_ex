@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<style>
+  table {
+    width: 500px;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+  }
+</style>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+{% extends 'layout.html' %}
+
+{% block content %}
+	<table >
+      <thead>
+        <tr>
+          <th>이름</th><th>주소</th><th>나이</th>
+        </tr>
+      </thead>
+	{% if datas.count > 0 %}
+	{% for a in datas %}
+      <tbody>
+        <tr>
+          <td>{{a.irum}}</td><td>{{a.juso}}</td><td>{{a.nai}}</td>
+        </tr>
+	{% endfor %}
+{% else %}
+	친구가 없어요<p/>
+{% endif %}
+      </tbody>
+    </table>
+{% endblock %}
+</body>
+</html>
+
+
